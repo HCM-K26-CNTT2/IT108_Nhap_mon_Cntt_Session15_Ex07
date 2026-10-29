@@ -1,0 +1,90 @@
+﻿Bài 7: Giải Cứu Dữ Liệu Nhóm Startup Bị Mất Trên Máy Tính Cá Nhân 
+Phần 1: Phân tích vấn đề
+Hạng mục
+	Rủi ro
+	Nguyên nhân
+	Xếp loại
+	Business Plan (20 trang) 
+	100%
+	Lưu trữ trên ỗ đĩa mà không có bản sao lưu  hoặc lưu trên cloud. Khi hỏng ổ cứng là sẽ mất hết dữ liệu. 
+	Cao
+	Mã nguồn giao diện (HTML/CSS) 
+	75% - 80%
+	Lưu trên USB Flash Drive. USB rất dễ bị hỏng phần cứng, nhiễm virus, hoặc rút ra đột ngột gây lỗi file 
+	Cao
+	Database danh sách test user 
+	50% - 60% 
+	Lưu trên file Excel máy cá nhân thành viên B, bản cập nhật đã trễ 2 tuần. Dù không mất trắng toàn bộ dữ liệu gốc nhưng mất mát 2 tuần công sức cập nhật và kiểm tra dữ liệu. 
+	Trung bình
+	Slide Pitch (PowerPoint) 
+	30% - 40% 
+	Lưu trên Zalo Cloud, file vẫn còn trên mạng nhưng không biết có phải bản mới nhất hay không. Nguy cơ ghi đè phiên bản cũ lên phiên bản mới.
+	Thấp
+	Tài liệu SRS (Word) 
+	30% - 40%
+	Gửi qua lại qua file đính kèm Email nhiều lần. Không mất dữ liệu hoàn toàn nhưng mất thời gian tìm kiếm, dễ tổng hợp sai bản chính thức. 
+	Thấp
+	
+
+     2. 
+* Thuật ngữ:
+* Version Sprawl (Phân mảnh /nhiều phiên bản mới tạo ra không kiểm soát) 
+* Giải thích nguyên nhân:
+* Nhóm làm việc: sửa file -> gửi file qua Zalo/Email -> tải về máy sửa tiếp -> gửi lại.
+* Mỗi lần có người tải về sửa độc lập trên máy của họ mà không có cơ chế khóa file thì một nhánh dữ liệu rác mới lại được sinh ra
+.
+* Hậu quả đối với dự án phần mềm thực tế:
+* Xung đột dữ liệu & ghi đè: Thành viên C có thể lấy nhầm bản cũ của thành viên A sửa tiếp, xóa bỏ những tính năng mà thành viên B vừa hoàn thiện hôm qua.
+* Lãng phí thời gian: mất thời gian chỉ để so sánh từng dòng 
+
+
+Phần 2: Sửa lỗi & Nghiệm thu
+      3.
+* Local 
+* Chọn file trực tiếp từ ổ đĩa D
+* Chỉnh sửa nội dung
+* Ctrl + S để lưu file lại trên máy
+            ↓ 
+* Auto Sync
+* Tải Google drive for Desktop 
+
+
+* Bật chế độ Sync with google drive
+
+
+* Khi Ctrl + S lưu file trên máy thì biểu tượng tích xanh sẽ hiện ra và file đã lưu trên Cloud
+
+
+            ↓ 
+
+
+* Cloud
+* Lưu trên Drive của nhóm CampusPay 
+* Tự động ghi lại lịch sử chỉnh sửa (Version History) 
+* Các thành viên khác có thể thấy phiên bản mới nhất 
+
+
+
+
+
+
+
+
+
+
+4. Biểu tượng trạng thái trên File Explorer sẽ hiển thị gì?
+* File Explorer sẽ hiển thị biểu tượng Hai mũi tên xoay tròn màu xanh dương 
+* Nếu quá trình bị gián đoạn khi gập máy đột ngột, nó có thể chuyển sang biểu tượng Dấu chấm than màu đỏ
+
+
+* File chỉ thực sự an toàn trên Cloud khi hiển thị Dấu tích xanh lá 
+
+
+
+
+* Hệ thống xử lý thế nào khi gập máy ngay:
+* Tiến trình tải lên bị ngắt kết nối Internet đột ngột giữa chừng. Dữ liệu mới sửa vẫn nằm trên ổ cứng máy đó, nhưng trên Cloud vẫn chỉ lưu phiên bản cũ.
+
+
+* Việc thành viên cần làm trước khi tắt máy/gập máy:
+* Quan sát icon trạng thái của file/folder: Đảm bảo file vừa sửa đã chuyển sang icon tích xanh thay vì đang xoay tròn.
